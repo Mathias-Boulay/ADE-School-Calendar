@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">School Calendar</string>
+
+    <string name="title">School Calendar</string>
+    <string name="catchphrase">Insert a catchphrase here</string>
+    <string name="question1">What usage do you prefer ?</string>
+    <string name="question2">What is your ADE offline calendar link ?</string>
+
+    <string name="ADELinkPlaceholder">Fill with your ade calendar link</string>
+
+    <string name="dataSaver">Data Saver</string>
+    <string name="dataSaverArgument1">- Limited auto refreshing</string>
+    <string name="dataSaverArgument2">- Consume \u003c 1Mo/month</string>
+    <string name="dataSaverArgument3">- Ideal for cheap data plan</string>
+    <string name="dataSaverConfirm">Yes, I\'m poor !</string>
+
+
+    <string name="dataBurner">Data Burner</string>
+    <string name="dataBurnerArgument1">- Refresh on app opening</string>
+    <string name="dataBurnerArgument2">- Consume up to 5Mo/month</string>
+    <string name="dataBurnerArgument3">- Insert insult here</string>
+    <string name="dataBurnerConfirm">Let\'s burn trees !</string>
+
+
+
+
+</resources>
