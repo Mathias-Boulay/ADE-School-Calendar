@@ -29,8 +29,18 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //Support for ical format
+    implementation 'org.mnode.ical4j:ical4j:2.2.6'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+
+
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 
 }
