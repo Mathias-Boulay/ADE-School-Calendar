@@ -10,6 +10,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import com.spse.schoolcalendar.AsyncTask.DownloadTask;
+
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     Button b;
@@ -18,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Create ics files folder
+        FileManager.createFolder(getApplicationInfo().dataDir + "/plannings");
+
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        System.err.println(fDate);
+
 
         Intent gameActivity = new Intent(MainActivity.this, FirstStartActivity.class);
         startActivity(gameActivity);
