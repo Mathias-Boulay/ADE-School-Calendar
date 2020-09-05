@@ -7,12 +7,6 @@ import com.spse.schoolcalendar.CalendarActivity;
 import com.spse.schoolcalendar.CalendarPanel;
 import com.spse.schoolcalendar.VCalendar.VCalendar;
 
-import net.fortuna.ical4j.data.CalendarBuilder;
-import net.fortuna.ical4j.data.ParserException;
-import net.fortuna.ical4j.data.UnfoldingReader;
-import net.fortuna.ical4j.model.*;
-import net.fortuna.ical4j.model.component.*;
-import net.fortuna.ical4j.model.property.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -48,20 +42,19 @@ public class ParsingTask extends AsyncTask<Object,Void,CalendarActivity> {
                 //The buffered reader reads each lines without knowing what it is.
                 //We have to re-invent the wheel
 
-                if(line.contains("BEGIN:VCALENDAR")){
-                    lastState = "BEGIN:VCALENDAR";
-                    continue;
+                if(line.contains(":") && line.indexOf(" ") != 0){
+                    if(line.contains("BEGIN:VEVENT")){
+                        currentVEvent++;
+                    }
+                    String key = line.substring(0,line.indexOf(":"));
+                    line = line.replace(key + ":", "");
+
+                    calendar.events[currentVEvent].details.put(key,line);
+                    lastState = key;
+                }else{
+                    String addedValue = calendar.events[currentVEvent].details.get(lastState) + line.replace(" ","");
+                    calendar.events[currentVEvent].details.put(lastState, addedValue);
                 }
-
-                if(line.contains("METHOD:")){
-                    lastState = "METHOD";
-                    calendar.method = line.replace("METHOD:","");
-                    continue;
-                }
-
-                //if(line.contains("PROID"))
-
-
 
             }
 

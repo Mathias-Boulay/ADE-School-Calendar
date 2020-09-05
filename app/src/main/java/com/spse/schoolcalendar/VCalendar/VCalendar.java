@@ -3,7 +3,7 @@ package com.spse.schoolcalendar.VCalendar;
 public class VCalendar {
 
     public String method;
-    public String proId;
+    public String prodId;
     public String version;
     public String calScale;
 

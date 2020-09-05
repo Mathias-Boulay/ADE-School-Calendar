@@ -46,7 +46,7 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
                 int fileLength = connection.getContentLength();
                 // download the file
                 input = connection.getInputStream();
-                output = new FileOutputStream(context.getApplicationInfo().dataDir + "/test2.ics");
+                output = new FileOutputStream(context.getApplicationInfo().dataDir + "/plannings/");
                 byte data[] = new byte[4096];
 
                 int count;
